@@ -24,7 +24,7 @@ export default function CardNews({ news }: { news: Article }) {
           height={1200}
           className="aspect-4/3 rounded-md object-cover"
         />
-        <Badge className="absolute top-3 right-10">{news.section}</Badge>
+        <Badge className="absolute capitalize top-3 right-10">{news.section}</Badge>
       </CardHeader>
       <CardContent className="flex flex-col gap-2">
         <CardTitle className="hover:underline">
