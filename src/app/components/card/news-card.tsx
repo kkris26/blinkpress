@@ -22,7 +22,7 @@ export default function CardNews({ news }: { news: Article }) {
           src={news.multimedia[0].url}
           width={1200}
           height={1200}
-          className="aspect-4/3 rounded-md"
+          className="aspect-4/3 rounded-md object-cover"
         />
         <Badge className="absolute top-3 right-10">{news.section}</Badge>
       </CardHeader>
@@ -38,7 +38,9 @@ export default function CardNews({ news }: { news: Article }) {
       <CardFooter className="flex justify-end">
         <CardAction>
           <Button>
-            <Link href={news.url}>View More</Link>
+            <Link target="blank" href={news.url}>
+              View More
+            </Link>
           </Button>
         </CardAction>
       </CardFooter>
