@@ -15,23 +15,25 @@ export default function Navbar() {
   }
   const menus: Menu[] = [
     { menu: "Home", path: "/" },
-    { menu: "Food", path: "/food" },
-    { menu: "Arts", path: "/arts" },
-    { menu: "fashion", path: "/fashion" },
-    { menu: "Health", path: "/health" },
+    { menu: "Food", path: "/category/food" },
+    { menu: "Arts", path: "/category/arts" },
+    { menu: "Fashion", path: "/category/fashion" },
+    { menu: "Health", path: "/category/health" },
   ];
   return (
     <nav className="w-full items-center px-10  flex justify-between p-2 border-b shadow">
       <div className="w-60">
-        <h1 className="text-xl">Blink<span className="font-bold">Press</span></h1>
+        <h1 className="text-xl">
+          Blink<span className="font-bold">Press</span>
+        </h1>
       </div>
       <NavigationMenu>
-        <NavigationMenuList className="gap-4">
+        <NavigationMenuList className="gap-8">
           {menus.map((m, i) => (
             <NavigationMenuItem key={i} className="hover:underline ">
-              <NavigationMenuLink className="hover:bg-transparent">
-                <Link href={m.path}>{m.menu}</Link>
-              </NavigationMenuLink>
+              <Link href={m.path} className="text-sm">
+                {m.menu}
+              </Link>
             </NavigationMenuItem>
           ))}
         </NavigationMenuList>

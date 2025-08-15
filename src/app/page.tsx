@@ -1,9 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { AlertDialogDemo } from "./components/AlertDialog";
-import Image from "next/image";
 import { Article } from "@/types/global";
 import CardNews from "./components/card/news-card";
-import Navbar from "./components/navbar/navbar";
 
 const fetchNews = async () => {
   const res = await fetch(
@@ -24,7 +20,6 @@ export default async function Home() {
   console.log(news);
   return (
     <>
-      <Navbar />
       <div className="w-full p-10">
         <h1 className="text-3xl">News App</h1>
         <div className="grid grid-cols-4 gap-4 mt-5">
