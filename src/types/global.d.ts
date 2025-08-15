@@ -10,3 +10,7 @@ export interface Article {
   published_date: string;
   multimedia: Multimedia[];
 }
+
+interface Children {
+  children: ReactNode;
+}
