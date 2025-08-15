@@ -7,6 +7,7 @@ import HeadingNews from "../components/heading/news-title";
 import NewsWrapper from "../components/wrapper/news-wrapper";
 import SearchNewsCard from "../components/card/search-news-card";
 import { Button } from "@/components/ui/button";
+import LoadingNews from "../loading";
 
 export default function SearchPage() {
   const searchParams = useSearchParams();
@@ -14,10 +15,18 @@ export default function SearchPage() {
   const query: string | null = searchParams.get("q");
   const page: string | null = searchParams.get("page");
   const [news, setNews] = useState<NewsSearch[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const getData = async (query: string | null, page: string | null) => {
-    const news = await fetchNews(query, page);
-    setNews(news);
+    try {
+      setIsLoading(true);
+      const news = await fetchNews(query, page);
+      setNews(news);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -33,7 +42,7 @@ export default function SearchPage() {
         <div className="flex gap-2 items-center">
           <Button
             className="cursor-pointer"
-            disabled={Number(page) === 1}
+            disabled={Number(page) === 1 || isLoading}
             onClick={() => router.push(`?page=${Number(page) - 1}&q=${query}`)}
             variant="link"
           >
@@ -42,7 +51,7 @@ export default function SearchPage() {
           <p>{page}</p>
           <Button
             className="cursor-pointer"
-            disabled={Number(page) >= 100}
+            disabled={Number(page) >= 100 || isLoading}
             onClick={() => router.push(`?page=${Number(page) + 1}&q=${query}`)}
             variant="link"
           >
@@ -50,10 +59,14 @@ export default function SearchPage() {
           </Button>
         </div>
       </div>
-      <NewsWrapper>
-        {news.length > 0 &&
-          news.map((n, i) => <SearchNewsCard key={i} news={n} />)}
-      </NewsWrapper>
+      {isLoading ? (
+        <LoadingNews type="search" />
+      ) : (
+        <NewsWrapper>
+          {news.length > 0 &&
+            news.map((n, i) => <SearchNewsCard key={i} news={n} />)}
+        </NewsWrapper>
+      )}
     </div>
   );
 }

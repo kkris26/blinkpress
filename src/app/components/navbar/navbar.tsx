@@ -22,12 +22,12 @@ export default function Navbar() {
     { menu: "Health", path: "/category/health" },
   ];
   return (
-    <nav className="w-full bg-neutral-950/80 fixed top-0 left-0 z-2 backdrop-blur-sm items-center flex justify-center p-2 border-b shadow">
+    <nav className=" w-full bg-neutral-950/80 fixed top-0 left-0 z-2 backdrop-blur-sm items-center flex justify-center p-2 border-b shadow">
       <div className="max-w-7xl w-full flex justify-between items-center px-5">
         <div className="w-60">
           <Logo />
         </div>
-        <NavigationMenu>
+        <NavigationMenu className="sm:block hidden">
           <NavigationMenuList className="gap-8">
             {menus.map((m, i) => (
               <NavigationMenuItem key={i} className="hover:underline ">
