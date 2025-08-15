@@ -4,7 +4,7 @@ import NewsWrapper from "@/app/components/wrapper/news-wrapper";
 import { Article } from "@/types/global";
 
 const fetchNewsByCategory = async (category: string) => {
-  const url = `https://api.nytimes.com/svc/topstories/v2/${category}.json?api-key=JcuMkFcYodSb6GmvKSHhAtcrwtGxa3Of`;
+  const url = `https://api.nytimes.com/svc/topstories/v2/${category}.json?api-key=${process.env.API_KEY}`;
   const res = await fetch(url, {
     cache: "force-cache",
   });
@@ -20,7 +20,6 @@ export default async function DetailCategory({
 }) {
   const { slug } = await params;
   const news: Article[] = await fetchNewsByCategory(slug);
-  console.log(news);
 
   return (
     <div className="w-full p-10">

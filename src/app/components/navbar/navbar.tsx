@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Search } from "lucide-react";
 import Link from "next/link";
+import SearchForm from "../form/search-form";
 export default function Navbar() {
   interface Menu {
     path: string;
@@ -37,16 +38,8 @@ export default function Navbar() {
           ))}
         </NavigationMenuList>
       </NavigationMenu>
-      <div className="flex w-60 items-center gap-2">
-        <Input type="text" placeholder="Search Article" />
-        <Button
-          type="submit"
-          className="cursor-pointer"
-          variant="outline"
-          size="icon"
-        >
-          <Search />
-        </Button>
+      <div className="w-60">
+        <SearchForm />
       </div>
     </nav>
   );
