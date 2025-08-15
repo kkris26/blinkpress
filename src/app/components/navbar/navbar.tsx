@@ -3,7 +3,6 @@ import { Input } from "@/components/ui/input";
 import {
   NavigationMenu,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import { Search } from "lucide-react";

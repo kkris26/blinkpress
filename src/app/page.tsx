@@ -3,6 +3,7 @@ import CardNews from "./components/card/news-card";
 import NewsWrapper from "./components/wrapper/news-wrapper";
 import HeadingNews from "./components/heading/news-title";
 
+
 const fetchNews = async () => {
   const res = await fetch(
     `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${process.env.API_KEY}`,
