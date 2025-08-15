@@ -22,7 +22,7 @@ export default async function DetailCategory({
   const news: Article[] = await fetchNewsByCategory(slug);
 
   return (
-    <div className="w-full p-10">
+    <div className="w-full">
       <HeadingNews>Category {slug}</HeadingNews>
       <NewsWrapper>
         {news.map((n, i) => (

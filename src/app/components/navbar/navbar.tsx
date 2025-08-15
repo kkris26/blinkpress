@@ -8,6 +8,7 @@ import {
 import { Search } from "lucide-react";
 import Link from "next/link";
 import SearchForm from "../form/search-form";
+import Logo from "../logo/logo";
 export default function Navbar() {
   interface Menu {
     path: string;
@@ -21,25 +22,25 @@ export default function Navbar() {
     { menu: "Health", path: "/category/health" },
   ];
   return (
-    <nav className="w-full items-center px-10  flex justify-between p-2 border-b shadow">
-      <div className="w-60">
-        <h1 className="text-xl">
-          Blink<span className="font-bold">Press</span>
-        </h1>
-      </div>
-      <NavigationMenu>
-        <NavigationMenuList className="gap-8">
-          {menus.map((m, i) => (
-            <NavigationMenuItem key={i} className="hover:underline ">
-              <Link href={m.path} className="text-sm">
-                {m.menu}
-              </Link>
-            </NavigationMenuItem>
-          ))}
-        </NavigationMenuList>
-      </NavigationMenu>
-      <div className="w-60">
-        <SearchForm />
+    <nav className="w-full bg-neutral-950/80 fixed top-0 left-0 z-2 backdrop-blur-sm items-center flex justify-center p-2 border-b shadow">
+      <div className="max-w-7xl w-full flex justify-between items-center px-5">
+        <div className="w-60">
+          <Logo />
+        </div>
+        <NavigationMenu>
+          <NavigationMenuList className="gap-8">
+            {menus.map((m, i) => (
+              <NavigationMenuItem key={i} className="hover:underline ">
+                <Link href={m.path} className="text-sm">
+                  {m.menu}
+                </Link>
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
+        <div className="w-60">
+          <SearchForm />
+        </div>
       </div>
     </nav>
   );

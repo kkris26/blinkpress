@@ -27,7 +27,7 @@ export default function SearchPage() {
   }, [query, page]);
 
   return (
-    <div className="w-full p-10">
+    <div className="w-full">
       <div className="flex justify-between items-center">
         <HeadingNews>Showing news results for "{query}"</HeadingNews>
         <div className="flex gap-2 items-center">
