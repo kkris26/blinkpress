@@ -17,11 +17,12 @@ const fetchNewsByCategory = async (category: string) => {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
+  const { slug } = await params;
   return {
-    title: `Latest ${params.slug} News & Top Stories | Blink Press`,
-    description: `Stay updated with the latest ${params.slug} news, breaking headlines, and top stories from around the world – fast, reliable, and always up to date on Blink Press.`,
+    title: `Latest ${slug} News & Top Stories | Blink Press`,
+    description: `Stay updated with the latest ${slug} news, breaking headlines, and top stories from around the world – fast, reliable, and always up to date on Blink Press.`,
   };
 }
 
