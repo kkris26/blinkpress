@@ -1,8 +1,7 @@
-"use client"
+"use client";
+
+import ErrorMessage from "../error";
+
 export default function Error() {
-  return (
-    <div>
-      <h2>Error</h2>
-    </div>
-  );
+  return <ErrorMessage />;
 }

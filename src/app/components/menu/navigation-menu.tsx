@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   NavigationMenu,
@@ -12,11 +12,13 @@ interface Menu {
   menu: string;
 }
 const menus: Menu[] = [
-  { menu: "Home", path: "/" },
-  { menu: "Food", path: "/category/food" },
   { menu: "Arts", path: "/category/arts" },
-  { menu: "Fashion", path: "/category/fashion" },
   { menu: "Health", path: "/category/health" },
+  { menu: "Business", path: "/category/business" },
+  { menu: "Politics", path: "/category/politics" },
+  { menu: "Technology", path: "/category/technology" },
+  { menu: "Food", path: "/category/food" },
+  { menu: "World", path: "/category/world" },
 ];
 
 export default function MenuNav({

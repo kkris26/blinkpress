@@ -1,5 +1,5 @@
 "use client";
-export default function Error() {
+export default function ErrorMessage() {
   return (
     <div className="flex w-full h-screen items-center justify-center  text-center">
       <div className="p-6 rounded-lg shadow-lg">
