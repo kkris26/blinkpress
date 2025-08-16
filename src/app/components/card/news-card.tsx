@@ -24,7 +24,7 @@ export default function CardNews({ news }: { news: Article }) {
           height={1200}
           className="aspect-4/3 rounded-md object-cover"
         />
-        <Badge className="absolute capitalize top-2 right-2 sm:top-3 sm:right-3 hover:underline">
+        <Badge  className="absolute capitalize top-2 right-2 sm:top-3 sm:right-3 hover:underline">
           <Link href={`/category/${news.section}`}>{news.section}</Link>
         </Badge>
       </CardHeader>
@@ -39,7 +39,7 @@ export default function CardNews({ news }: { news: Article }) {
       </CardContent>
       <CardFooter className=" justify-end hidden sm:flex p-0">
         <CardAction>
-          <Button>
+          <Button variant={"default"}>
             <Link target="blank" href={news.url}>
               View More
             </Link>

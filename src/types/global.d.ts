@@ -1,3 +1,8 @@
+export interface Children {
+  children: ReactNode;
+}
+
+
 interface Multimedia {
   url: string;
 }
@@ -11,9 +16,6 @@ export interface Article {
   multimedia: Multimedia[];
 }
 
-export interface Children {
-  children: ReactNode;
-}
 
 export interface NewsSearch {
   abstract: string;

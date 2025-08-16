@@ -38,7 +38,7 @@ export default function SearchPage() {
   return (
     <div className="w-full">
       <div className="flex justify-between items-center">
-        <HeadingNews>Showing news results for "{query}"</HeadingNews>
+        <HeadingNews >Showing news results for "{query}"</HeadingNews>
         <div className="flex gap-2 items-center">
           <Button
             className="cursor-pointer"

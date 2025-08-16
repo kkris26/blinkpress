@@ -36,6 +36,7 @@ export default function SearchForm() {
         value={query || ""}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search Article"
+        className="text-xs sm:text-sm p-2"
       />
       <Button
         type="submit"
