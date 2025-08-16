@@ -1,7 +1,4 @@
-export interface Children {
-  children: ReactNode;
-}
-
+export type Children = ReactNode;
 
 interface Multimedia {
   url: string;
@@ -15,7 +12,6 @@ export interface Article {
   published_date: string;
   multimedia: Multimedia[];
 }
-
 
 export interface NewsSearch {
   abstract: string;

@@ -1,7 +1,11 @@
-export default function Logo(){
-    return (
-      <h1 className="text-xl">
+import Link from "next/link";
+
+export default function Logo() {
+  return (
+    <h1 className="text-xl">
+      <Link href={"/"}>
         Blink<span className="font-bold">Press</span>
-      </h1>
-    );
+      </Link>
+    </h1>
+  );
 }

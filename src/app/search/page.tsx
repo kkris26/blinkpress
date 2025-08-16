@@ -38,22 +38,26 @@ export default function SearchPage() {
   return (
     <div className="w-full">
       <div className="flex justify-between items-center">
-        <HeadingNews >Showing news results for "{query}"</HeadingNews>
-        <div className="flex gap-2 items-center">
+        <HeadingNews className="text-sm">
+          Showing news results for "{query}"
+        </HeadingNews>
+        <div className="flex gap-0 sm:gap-2 items-center">
           <Button
-            className="cursor-pointer"
+            className="cursor-pointer text-sm"
             disabled={Number(page) === 1 || isLoading}
             onClick={() => router.push(`?page=${Number(page) - 1}&q=${query}`)}
             variant="link"
+            size={"sm"}
           >
             Prev
           </Button>
-          <p>{page}</p>
+          <p className="text-sm">{page}</p>
           <Button
-            className="cursor-pointer"
+            className="cursor-pointer text-sm"
             disabled={Number(page) >= 100 || isLoading}
             onClick={() => router.push(`?page=${Number(page) + 1}&q=${query}`)}
             variant="link"
+            size={"sm"}
           >
             Next
           </Button>

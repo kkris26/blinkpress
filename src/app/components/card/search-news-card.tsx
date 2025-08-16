@@ -17,17 +17,19 @@ export default function SearchNewsCard({ news }: { news: NewsSearch }) {
   return (
     <Card className="bg-transparent p-3 sm:p-5 flex flex-row sm:flex-col justify-between gap-4 sm:gap-6 items-center sm:items-end">
       <CardHeader className="relative w-70 sm:w-full p-0 gap-0">
-        <Image
-          alt="Image"
-          src={
-            news.multimedia?.default?.url ||
-            "https://placehold.co/600x400/gray/white.webp"
-          }
-          width={1200}
-          height={1200}
-          className="aspect-4/3 rounded-md object-cover"
-        />
-        <Badge className="absolute capitalize top-2 right-2 sm:top-3 sm:right-3 hover:underline">
+        <Link href={news.web_url}>
+          <Image
+            alt="Image"
+            src={
+              news.multimedia?.default?.url ||
+              "https://placehold.co/600x400/gray/white.webp"
+            }
+            width={1200}
+            height={1200}
+            className="aspect-4/3 rounded-md object-cover"
+          />
+        </Link>
+        <Badge className="absolute capitalize text-xs sm:text-sm top-2 right-2 sm:top-3 sm:right-3 hover:underline">
           <Link href={`/category/${news.section_name}`}>
             {news.section_name}
           </Link>
