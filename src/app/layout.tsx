@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       "Get the latest breaking news, in-depth analysis, and trending stories from around the world – all in one place, fast and reliable.",
     images: [
       {
-        url: "https://fastly.picsum.photos/id/90/200/300.jpg?hmac=yKaRyhG3EFez3DuYnuPdh29pSCXLc8DDXROYdKQQp30",
+        url: "https://ucarecdn.com/838b47fb-1c23-4b7b-8d8a-4950600f1708/-/preview/1000x666/",
         width: 1200,
         height: 630,
         alt: "Blink Press Open Graph Image",

@@ -64,10 +64,37 @@ function SearchContent() {
       {isLoading ? (
         <LoadingNews type="search" />
       ) : (
-        <NewsWrapper>
-          {news.length > 0 &&
-            news.map((n, i) => <SearchNewsCard key={i} news={n} />)}
-        </NewsWrapper>
+        <>
+          <NewsWrapper>
+            {news.length > 0 &&
+              news.map((n, i) => <SearchNewsCard key={i} news={n} />)}
+          </NewsWrapper>
+          <div className="flex gap-0 sm:gap-2 items-center mt-5 sm:mt-8 justify-center">
+            <Button
+              className="cursor-pointer text-sm"
+              disabled={Number(page) === 1}
+              onClick={() =>
+                router.push(`?page=${Number(page) - 1}&q=${query}`)
+              }
+              variant="link"
+              size={"sm"}
+            >
+              Prev
+            </Button>
+            <p className="text-sm">{page}</p>
+            <Button
+              className="cursor-pointer text-sm"
+              disabled={Number(page) >= 100}
+              onClick={() =>
+                router.push(`?page=${Number(page) + 1}&q=${query}`)
+              }
+              variant="link"
+              size={"sm"}
+            >
+              Next
+            </Button>
+          </div>
+        </>
       )}
     </div>
   );
