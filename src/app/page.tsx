@@ -23,7 +23,7 @@ export default async function Home() {
   return (
     <>
       <div className="w-full">
-        <HeadingNews>News App</HeadingNews>
+        <HeadingNews>Today’s Highlights</HeadingNews>
         <NewsWrapper>
           {news.map((n, i) => (
             <CardNews key={i} news={n} />

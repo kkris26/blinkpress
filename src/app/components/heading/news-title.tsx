@@ -7,5 +7,5 @@ export default function HeadingNews({
   children: Children;
   className?: string;
 }) {
-  return <h1 className={`${className} text-lg sm:text-xl capitalize`}>{children}</h1>;
+  return <h1 className={`${className} text-lg sm:text-2xl capitalize`}>{children}</h1>;
 }

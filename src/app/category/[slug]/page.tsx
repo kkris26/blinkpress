@@ -9,9 +9,21 @@ const fetchNewsByCategory = async (category: string) => {
     cache: "force-cache",
   });
   const news = await res.json();
+  console.log({ news });
 
   return news.results as Article[];
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  return {
+    title: `Latest ${params.slug} News & Top Stories | Blink Press`,
+    description: `Stay updated with the latest ${params.slug} news, breaking headlines, and top stories from around the world – fast, reliable, and always up to date on Blink Press.`,
+  };
+}
 
 export default async function DetailCategory({
   params,
@@ -21,9 +33,10 @@ export default async function DetailCategory({
   const { slug } = await params;
   const news: Article[] = await fetchNewsByCategory(slug);
 
+  console.log(news);
   return (
     <div className="w-full">
-      <HeadingNews>Category {slug}</HeadingNews>
+      <HeadingNews>Latest in {slug}</HeadingNews>
       <NewsWrapper>
         {news.map((n, i) => (
           <CardNews key={i} news={n} />

@@ -19,6 +19,22 @@ export const metadata: Metadata = {
   title: "Blink Press – Fast & Reliable News Updates",
   description:
     "Get the latest breaking news, in-depth analysis, and trending stories from around the world – all in one place, fast and reliable.",
+  openGraph: {
+    type: "website",
+    url: "https://blinkpress.com",
+    siteName: "Blink Press",
+    title: "Blink Press – Fast & Reliable News Updates",
+    description:
+      "Get the latest breaking news, in-depth analysis, and trending stories from around the world – all in one place, fast and reliable.",
+    images: [
+      {
+        url: "https://fastly.picsum.photos/id/90/200/300.jpg?hmac=yKaRyhG3EFez3DuYnuPdh29pSCXLc8DDXROYdKQQp30",
+        width: 1200,
+        height: 630,
+        alt: "Blink Press Open Graph Image",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
