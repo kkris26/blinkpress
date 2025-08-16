@@ -7,6 +7,7 @@ import HeadingNews from "../components/heading/news-title";
 import NewsWrapper from "../components/wrapper/news-wrapper";
 import SearchNewsCard from "../components/card/search-news-card";
 import { Button } from "@/components/ui/button";
+import LoadingNews from "../loading";
 
 function SearchContent() {
   const searchParams = useSearchParams();
@@ -14,12 +15,20 @@ function SearchContent() {
   const query: string | null = searchParams.get("q");
   const page: string | null = searchParams.get("page");
   const [news, setNews] = useState<NewsSearch[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const getData = async () => {
-      if (!query) return;
-      const data = await fetchNews(query, page);
-      setNews(data);
+      try {
+        setIsLoading(true);
+        if (!query) return;
+        const data = await fetchNews(query, page);
+        setNews(data);
+      } catch (error) {
+        console.error("Failed to fetch news:", error);
+      } finally {
+        setIsLoading(false);
+      }
     };
     getData();
   }, [query, page]);
@@ -52,11 +61,14 @@ function SearchContent() {
           </Button>
         </div>
       </div>
-
-      <NewsWrapper>
-        {news.length > 0 &&
-          news.map((n, i) => <SearchNewsCard key={i} news={n} />)}
-      </NewsWrapper>
+      {isLoading ? (
+        <LoadingNews type="search" />
+      ) : (
+        <NewsWrapper>
+          {news.length > 0 &&
+            news.map((n, i) => <SearchNewsCard key={i} news={n} />)}
+        </NewsWrapper>
+      )}
     </div>
   );
 }
