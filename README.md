@@ -1,2 +1,27 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=20066744&assignment_repo_type=AssignmentRepo)
-# FERN-P3-S1GC01
+# Blink Press 📰
+
+Blink Press is a modern **News App** built with [Next.js 15 (App Router)](https://nextjs.org/), featuring category-based navigation, dynamic metadata (SEO optimized), and responsive UI.
+
+## 🚀 Deployment
+
+This project is deployed on **Vercel**:  
+👉 [https://blink-press.vercel.app](https://blink-press.vercel.app)
+
+## ✨ Features
+- 🔎 **Browse News** by category (arts, business, politics, technology, sports, etc.)
+- 📰 **Latest Headlines & Top Stories**
+- 📱 **Responsive UI** with modern design
+- ⚡ **Fast Rendering** (Server Components + Client Components)
+- 🔐 Secure API key management with `.env`
+- 🖼️ SEO Optimized: Metadata, OpenGraph, Twitter Card
+
+---
+
+## 🚀 Tech Stack
+- [Next.js 15](https://nextjs.org/) (App Router, TypeScript)
+- [Tailwind CSS](https://tailwindcss.com/) for styling
+- [shadcn/ui](https://ui.shadcn.com/) for UI components
+- [New York Times API](https://developer.nytimes.com/) as news provider
+- [Vercel](https://vercel.com/) for deployment
+
+---
